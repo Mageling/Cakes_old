@@ -6,7 +6,7 @@ import net.minecraft.world.World;
 
 public class BlockCakeTnt extends BlockCake {
 
-    protected BlockCakeTnt(int par1) {
+    public BlockCakeTnt(int par1) {
         super(par1);
     }
     
