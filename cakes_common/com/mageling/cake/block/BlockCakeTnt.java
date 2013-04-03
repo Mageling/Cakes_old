@@ -10,6 +10,17 @@ public class BlockCakeTnt extends BlockCake {
         super(par1);
     }
     
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    {
+        this.eatCakeSlice(par1World, par2, par3, par4, par5EntityPlayer);
+        return true;
+    }
+    
+    public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
+    {
+        this.eatCakeSlice(par1World, par2, par3, par4, par5EntityPlayer);
+    }
+    
     protected void eatCakeSlice(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer)
     {
         if (par5EntityPlayer.canEat(false))
