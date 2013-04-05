@@ -5,8 +5,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import com.mageling.cake.block.BlockCakeRegen;
 import com.mageling.cake.block.BlockCakeTnt;
 import com.mageling.cake.core.proxy.CommonProxy;
+import com.mageling.cake.item.ItemCakeRegen;
 import com.mageling.cake.item.ItemCakeTnt;
 import com.mageling.cake.lib.Reference;
 import com.mageling.cake.network.PacketHandler;
@@ -30,10 +32,11 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(channels = { Reference.CHANNEL_NAME }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class Cakes {
 
-    public static Block blockCakeTnt = new BlockCakeTnt(3333)
-            .setCreativeTab(CreativeTabs.tabFood);
-    public static Item itemCakeTnt = new ItemCakeTnt(3332, blockCakeTnt);
-
+    public static Block blockCakeTnt = new BlockCakeTnt(3333);
+    public static Block blockCakeRegen = new BlockCakeRegen(3334);
+    public static Item itemCakeTnt = new ItemCakeTnt(3331, blockCakeTnt).setCreativeTab(CreativeTabs.tabFood);
+    public static Item itemCakeRegen = new ItemCakeRegen(3332, blockCakeRegen).setCreativeTab(CreativeTabs.tabFood);
+    
     @Instance(Reference.MOD_ID)
     public static Cakes instance;
 
@@ -57,13 +60,23 @@ public class Cakes {
 
         GameRegistry.registerBlock(blockCakeTnt, "cakeTnt");
         LanguageRegistry.addName(blockCakeTnt, "TNT Cake");
+        
+        GameRegistry.registerBlock(blockCakeRegen, "cakeRegen");
+        LanguageRegistry.addName(blockCakeRegen, "Regeneration Cake");
 
         GameRegistry.registerItem(itemCakeTnt, "itemCakeTnt");
         LanguageRegistry.addName(itemCakeTnt, "TNT Cake");
+        
+        GameRegistry.registerItem(itemCakeRegen, "cakeRegen");
+        LanguageRegistry.addName(itemCakeRegen, "Regeneration Cake");
 
         GameRegistry.addRecipe(new ItemStack(itemCakeTnt, 1), new Object[] {
                 "AAA", "BEB", "CCC", 'A', Item.bucketMilk, 'B', Item.sugar,
                 'C', Item.wheat, 'E', Block.tnt });
+        
+        GameRegistry.addRecipe(new ItemStack(itemCakeRegen, 1), new Object[] {
+            "ABA", "BEB", "CBC", 'A', Item.bucketMilk, 'B', Item.ghastTear,
+            'C', Item.wheat, 'E', Item.egg });
 
     }
 
