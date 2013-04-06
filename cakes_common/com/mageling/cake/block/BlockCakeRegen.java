@@ -27,7 +27,7 @@ public class BlockCakeRegen extends BlockCake {
         if (par5EntityPlayer.canEat(false))
         {
             par5EntityPlayer.getFoodStats().addStats(2, 0.1F);
-            par5EntityPlayer.addPotionEffect(new PotionEffect(10, 24000));
+            par5EntityPlayer.addPotionEffect(new PotionEffect(10, 2400));
             int l = par1World.getBlockMetadata(par2, par3, par4) + 1;
 
             if (l >= 6)

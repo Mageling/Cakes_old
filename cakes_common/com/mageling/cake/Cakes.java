@@ -67,7 +67,7 @@ public class Cakes {
         GameRegistry.registerItem(itemCakeTnt, "itemCakeTnt");
         LanguageRegistry.addName(itemCakeTnt, "TNT Cake");
         
-        GameRegistry.registerItem(itemCakeRegen, "cakeRegen");
+        GameRegistry.registerItem(itemCakeRegen, "itemCakeRegen");
         LanguageRegistry.addName(itemCakeRegen, "Regeneration Cake");
 
         GameRegistry.addRecipe(new ItemStack(itemCakeTnt, 1), new Object[] {
