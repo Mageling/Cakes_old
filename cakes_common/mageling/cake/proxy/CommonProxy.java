@@ -1,4 +1,4 @@
-package mageling.cake.core.proxy;
+package mageling.cake.proxy;
 
 public class CommonProxy {
     public static String ITEMS_PNG = "";

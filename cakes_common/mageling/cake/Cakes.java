@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 
 import mageling.cake.block.BlockCakeRegen;
 import mageling.cake.block.BlockCakeTnt;
-import mageling.cake.core.proxy.CommonProxy;
+import mageling.cake.proxy.CommonProxy;
 import mageling.cake.item.ItemCakeRegen;
 import mageling.cake.item.ItemCakeTnt;
 import mageling.cake.lib.Reference;
@@ -50,14 +50,6 @@ public class Cakes {
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
-
-    }
-
-    // @SuppressWarnings("unchecked")
-    @Init
-    public void load(FMLInitializationEvent event) {
-        proxy.registerRenderers();
-
         GameRegistry.registerBlock(blockCakeTnt, "cakeTnt");
         LanguageRegistry.addName(blockCakeTnt, "TNT Cake");
         
@@ -69,6 +61,11 @@ public class Cakes {
         
         GameRegistry.registerItem(itemCakeRegen, "itemCakeRegen");
         LanguageRegistry.addName(itemCakeRegen, "Regeneration Cake");
+    }
+
+    // @SuppressWarnings("unchecked")
+    @Init
+    public void load(FMLInitializationEvent event) {
 
         GameRegistry.addRecipe(new ItemStack(itemCakeTnt, 1), new Object[] {
                 "AAA", "BEB", "CCC", 'A', Item.bucketMilk, 'B', Item.sugar,
