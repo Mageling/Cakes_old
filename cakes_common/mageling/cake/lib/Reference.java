@@ -15,6 +15,5 @@ public class Reference {
     public static final String SERVER_PROXY_CLASS = "com.mageling.cake.proxy.CommonProxy";
     public static final String CLIENT_PROXY_CLASS = "com.mageling.cake.proxy.ClientProxy";
     public static final int VERSION_CHECK_ATTEMPTS = 3;
-    public static final float MODEL_TEXTURE_OFFSET = 0.0002F;
 
 }

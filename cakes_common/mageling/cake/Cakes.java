@@ -1,18 +1,16 @@
 package mageling.cake;
 
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-
 import mageling.cake.block.BlockCakeRegen;
 import mageling.cake.block.BlockCakeTnt;
-import mageling.cake.proxy.CommonProxy;
 import mageling.cake.item.ItemCakeRegen;
 import mageling.cake.item.ItemCakeTnt;
 import mageling.cake.lib.Reference;
 import mageling.cake.network.PacketHandler;
-
+import mageling.cake.proxy.CommonProxy;
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -34,9 +32,11 @@ public class Cakes {
 
     public static Block blockCakeTnt = new BlockCakeTnt(3333);
     public static Block blockCakeRegen = new BlockCakeRegen(3334);
-    public static Item itemCakeTnt = new ItemCakeTnt(3331, blockCakeTnt).setCreativeTab(CreativeTabs.tabFood);
-    public static Item itemCakeRegen = new ItemCakeRegen(3332, blockCakeRegen).setCreativeTab(CreativeTabs.tabFood);
-    
+    public static Item itemCakeTnt = new ItemCakeTnt(3331, blockCakeTnt)
+            .setCreativeTab(CreativeTabs.tabFood);
+    public static Item itemCakeRegen = new ItemCakeRegen(3332, blockCakeRegen)
+            .setCreativeTab(CreativeTabs.tabFood);
+
     @Instance(Reference.MOD_ID)
     public static Cakes instance;
 
@@ -52,13 +52,13 @@ public class Cakes {
     public void preInit(FMLPreInitializationEvent event) {
         GameRegistry.registerBlock(blockCakeTnt, "cakeTnt");
         LanguageRegistry.addName(blockCakeTnt, "TNT Cake");
-        
+
         GameRegistry.registerBlock(blockCakeRegen, "cakeRegen");
         LanguageRegistry.addName(blockCakeRegen, "Regeneration Cake");
 
         GameRegistry.registerItem(itemCakeTnt, "itemCakeTnt");
         LanguageRegistry.addName(itemCakeTnt, "TNT Cake");
-        
+
         GameRegistry.registerItem(itemCakeRegen, "itemCakeRegen");
         LanguageRegistry.addName(itemCakeRegen, "Regeneration Cake");
     }
@@ -70,10 +70,10 @@ public class Cakes {
         GameRegistry.addRecipe(new ItemStack(itemCakeTnt, 1), new Object[] {
                 "AAA", "BEB", "CCC", 'A', Item.bucketMilk, 'B', Item.sugar,
                 'C', Item.wheat, 'E', Block.tnt });
-        
+
         GameRegistry.addRecipe(new ItemStack(itemCakeRegen, 1), new Object[] {
-            "ABA", "BEB", "CBC", 'A', Item.bucketMilk, 'B', Item.ghastTear,
-            'C', Item.wheat, 'E', Item.egg });
+                "ABA", "BEB", "CBC", 'A', Item.bucketMilk, 'B', Item.ghastTear,
+                'C', Item.wheat, 'E', Item.egg });
 
     }
 

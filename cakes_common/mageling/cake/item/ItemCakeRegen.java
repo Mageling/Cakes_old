@@ -7,7 +7,7 @@ public class ItemCakeRegen extends ItemReed {
 
     public ItemCakeRegen(int par1, Block par2Block) {
         super(par1, par2Block);
-        this.maxStackSize = 1;
+        maxStackSize = 1;
     }
 
 }
